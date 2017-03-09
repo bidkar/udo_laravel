@@ -1,12 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Bienvenido a Laravel {{ $title }}</title>
-</head>
-<body>
-    <h1>Bienvenido a Laravel {{ $title }}</h1>
-</body>
-</html>
+@extends('layouts.app')
+
+@section('title', 'Bienvenido')
+
+@section('content')
+    <div class="jumbotron">
+        <h1>Bienvenido al Blog UDO</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia praesentium delectus obcaecati facilis, porro animi, ut iusto soluta! Nobis nesciunt, quis nemo temporibus reprehenderit modi maiores doloribus facilis quibusdam odio?</p>
+        <p><a href="#" class="btn btn-primary">Crea tu blog</a></p>
+    </div>
+@endsection
