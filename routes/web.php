@@ -18,3 +18,25 @@ Route::get('/', function () {
 Route::get('home', function() {
     return view('home');
 });
+
+Route::get('test', function() {
+    // $user = new App\User;
+    // $user->insert([
+    //     'name' => 'bidkar',
+    //     'email' => 'bidkar.aragon@udo.mx',
+    //     'password' => Hash::make('123')
+    // ]);
+    // return $user->all();
+    $user = new App\User;
+    // $user_id = $user->find(1)->pluck('id');
+    $profile = new App\ProfileUser;
+    $profile->insert([
+        'user_id' => 1,
+        'first_name' => 'Bidkar',
+        'last_name' => 'Aragon',
+        'avatar' => '',
+        'twitter_user' => '@bidkarAragon',
+        'facebook_user' => 'bidkarAragon'
+    ]);
+    return $user->profile();
+});
