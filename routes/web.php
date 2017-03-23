@@ -15,28 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('home', function() {
-    return view('home');
-});
+Auth::routes();
 
-Route::get('test', function() {
-    // $user = new App\User;
-    // $user->insert([
-    //     'name' => 'bidkar',
-    //     'email' => 'bidkar.aragon@udo.mx',
-    //     'password' => Hash::make('123')
-    // ]);
-    // return $user->all();
-    $user = new App\User;
-    // $user_id = $user->find(1)->pluck('id');
-    $profile = new App\ProfileUser;
-    $profile->insert([
-        'user_id' => 1,
-        'first_name' => 'Bidkar',
-        'last_name' => 'Aragon',
-        'avatar' => '',
-        'twitter_user' => '@bidkarAragon',
-        'facebook_user' => 'bidkarAragon'
-    ]);
-    return $user->profile();
-});
+Route::get('/home', 'HomeController@index');
